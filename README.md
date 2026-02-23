@@ -1,11 +1,11 @@
 # Dosh_model_prediction
-🧠 AI-Powered Ayurveda Dosha Prediction System
+# 🧠 Ayurveda Dosha Prediction System
 
 A Machine Learning system that predicts a person’s Ayurvedic Dosha (Vata, Pitta, Kapha) using physiological, lifestyle, and symptom data. The model is optimized using GridSearchCV and provides confidence scores for each prediction.
 
 This project demonstrates a complete end-to-end ML pipeline from preprocessing to deployment-ready inference.
 
-📌 Features
+# 📌 Features
 
 ✅ Predicts Dosha using Machine Learning
 
@@ -24,88 +24,127 @@ This project demonstrates a complete end-to-end ML pipeline from preprocessing t
 ✅ Production-ready pipeline
 
 
-🧬 Input Features
+# 🧬 Input Features
 
 The model uses the following features:
 
-Age
+1. Age
 
-Gender
+2. Gender
 
-Prakriti
+3. Prakriti
 
-Symptoms
+4. Symptoms
 
-Stress Level
+5. Stress Level
 
-Sleep Pattern
+6. Sleep Pattern
 
-Diet Type
+7. Diet Type
 
-Season
+8. Season
 
-Climate
+9. Climate
 
 
-Machine Learning Pipeline
 
+
+# 🤖 Machine Learning Pipeline
+
+```
 Dataset
- ↓
-Data Cleaning
- ↓
-Feature Encoding
-   ├── TF-IDF (Symptoms)
-   ├── OneHotEncoder (Categorical)
-   └── Numeric Features (Age)
- ↓
-Train-Test Split
- ↓
-Model Comparison
- ↓
-GridSearchCV Hyperparameter Optimization
- ↓
-Best Model Selection
- ↓
-Model Saving
- ↓
-Prediction with Confidence Scores
+│
+├── Data Cleaning
+│
+├── Feature Encoding
+│   ├── TF-IDF Vectorizer (Symptoms)
+│   ├── OneHotEncoder (Categorical Features)
+│   └── Numeric Features (Age)
+│
+├── Train-Test Split
+│
+├── Model Comparison
+│   ├── Logistic Regression
+│   ├── Decision Tree
+│   ├── Random Forest
+│   ├── Gradient Boosting
+│   └── XGBoost
+│
+├── GridSearchCV Hyperparameter Optimization
+│
+├── Best Model Selection
+│
+├── Model Saving (Pickle)
+│
+└── Prediction with Confidence Scores
+```
 
-🔧 Technologies Used
+# 🔧 Technologies Used
 
-Python
+* Python
 
-Pandas
+* Pandas
 
-NumPy
+* NumPy
 
-Scikit-Learn
+* Scikit-Learn
 
-XGBoost
+* XGBoost
 
-GridSearchCV
+* GridSearchCV
 
-TF-IDF Vectorizer
+* TF-IDF Vectorizer
 
-Pickle
+* Pickle
 
-📊 Model Optimization
+# 📊 Model Optimization
 
-Hyperparameter tuning performed using GridSearchCV:
+Hyperparameter tuning was performed using GridSearchCV to find the best Random Forest model configuration.
+
+## Parameter Grid
+```
 param_grid = {
     "model__n_estimators": [100, 200, 300],
     "model__max_depth": [None, 10, 20],
     "model__min_samples_split": [2, 5],
     "model__min_samples_leaf": [1, 2]
 }
-Features:
+```
+## Optimization Method
 
-5-fold cross validation
+The following optimization techniques were used:
 
-Parallel processing (n_jobs = -1)
+5-Fold Cross Validation
 
-Automatic best model selection
+Parallel Processing using all CPU cores (n_jobs = -1)
 
-##📈 Example Output
+Automated Best Model Selection based on accuracy
+```
+
+RandomForestClassifier
+   ↓
+GridSearchCV
+   ↓
+Cross Validation (5 folds)
+   ↓
+Best Hyperparameters Selected
+   ↓
+Best Model Saved (Pickle)
+```
+## Best Model Features
+
+Optimized Random Forest model
+
+Fully integrated preprocessing pipeline
+
+TF-IDF feature vectorization for symptoms
+
+OneHotEncoding for categorical features
+
+Production-ready saved model
+
+# 📈 Example Output
+```
 'predicted_dosha': 'Vata'
 
 Confidence levels:
@@ -114,3 +153,96 @@ Pitta: 0.00%
 Vata: 100.00%
 
 Final Output: Vata
+```
+
+# 📁 Project Structure
+```
+dosha-prediction/
+│
+├── dataset/
+│   └── Ayurvedic_ML_Dataset_3000_Records.csv
+│
+├── model/
+│   ├── best_dosha_model.pkl
+│   └── label_encoder.pkl
+│
+├── train_model.py
+├── predict.py
+└── README.md
+```
+# 🚀 Installation
+## Clone the repository:
+```
+git clone https://github.com/deeksha27sharma/dosha_model_prediction.git
+cd dosha_model_prediction
+```
+## Install dependencies:
+```
+pip install pandas numpy scikit-learn xgboost
+```
+
+# ▶️ Usage
+
+## Train the model
+```
+python train_model.py
+```
+## Make prediction
+```
+predict_dosha_with_confidence(sample_input)
+```
+
+# 🧪 Example Prediction Code
+```
+sample = {
+    "Age": 25,
+    "Gender": "Female",
+    "Prakriti": "Vata",
+    "Symptoms": "dry skin, anxiety, constipation",
+    "Stress Level": "High",
+    "Sleep Pattern": "Insomnia",
+    "Diet Type": "Vegetarian",
+    "Season": "Winter",
+    "Climate": "Cold"
+}
+```
+# 🏆 Project Highlights
+
+* End-to-end ML pipeline implementation
+
+* Hyperparameter optimized model
+
+* Confidence score prediction
+
+* Deployment-ready architecture
+
+* Clean and modular code design
+
+# 📊 Project Status
+
+* Status: Complete
+* Level: Advanced Machine Learning Project
+* Deployment Ready: Yes
+
+# 👩‍💻 Author
+
+Diksha Sharma
+
+BTech Computer Science Engineering
+
+# ⭐ Future Improvements
+
+* Streamlit Web App
+
+* FastAPI Deployment
+
+* Real-time prediction API
+
+* Integration with healthcare applications
+  
+
+# 📁 Dataset
+
+The dataset used in this project was created and provided by my project partner, Jagveer Singh Bedi.
+
+
