@@ -27,7 +27,7 @@ Project: Dosha Prediction System
 
 
 import pandas as pd
-df = pd.read_csv("Ayurvedic_ML_Dataset_3000_Records.csv")
+df = pd.read_csv("Dataset/Ayurvedic_ML_Dataset_3000_Records.csv")
 
 
 features = [
