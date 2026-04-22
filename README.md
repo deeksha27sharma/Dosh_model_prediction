@@ -1,4 +1,5 @@
-# 🌿 AyurSage: Dosha & Disease Prediction SystemAn end-to-end Machine Learning pipeline that bridges ancient Ayurvedic wisdom with modern Data Science to provide personalized health insights.Built as part of a Final Year Project to predict Prakriti (Dosha), identify potential Ailments, and recommend Ayurvedic Treatments.
+# 🌿 AyurSage: 
+### Dosha & Disease Prediction SystemAn end-to-end Machine Learning pipeline that bridges ancient Ayurvedic wisdom with modern Data Science to provide personalized health insights.Built as part of a Final Year Project to predict Prakriti (Dosha), identify potential Ailments, and recommend Ayurvedic Treatments.
 
 ## 🎯 What It Does
 
